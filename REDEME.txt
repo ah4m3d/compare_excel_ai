@@ -1,0 +1,10 @@
+cd compare_excel_ai_py313_nodb
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+ollama run llama3
+python compare_excel.py test_5_entries.xlsx \
+  --anchor mbruid \
+  --left json_col_1 \
+  --right json_col_2 \
+  --out result.xlsx
